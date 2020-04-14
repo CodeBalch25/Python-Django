@@ -1,0 +1,19 @@
+{% extends "app_passwords/layout.html" %} {% load static%} {% block body_block %}
+
+<div class="jumbotron container bg-success">
+    <form action="{% url 'app_passwords:user_login' %}" method="POST">
+        {% csrf_token %}
+
+
+        <label for="username">Username:</label>
+        <input type="text" name="username">
+
+        <label for="password">Password:</label>
+        <input type="password" name="password">
+        <button type="submit" value="Login" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+
+{% endblock %}
